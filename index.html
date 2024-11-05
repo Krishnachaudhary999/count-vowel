@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count Vowels</title>
+    <style>
+	body {
+    	font-family: Arial, sans-serif;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	height: 100vh;
+    	background-color: #f0f0f0;
+	}
+
+	.container {
+    	text-align: center;
+    	background-color: white;
+    	padding: 20px;
+    	border-radius: 5px;
+    	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	input {
+    	margin-top: 10px;
+    	padding: 10px;
+    	border: 1px solid #ccc;
+    	border-radius: 4px;
+	}
+
+	button {
+    	margin-top: 10px;
+   	padding: 10px 20px;
+    	background-color: #007bff;
+    	color: white;
+    	border: none;
+    	border-radius: 4px;
+    	cursor: pointer;
+	}
+
+	button:hover {
+    	background-color: #0056b3;
+	}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Count Vowels</h2>
+        <input type="text" id="inputText" placeholder="Enter a word or phrase">
+        <button onclick="countVowels()">Count Vowels</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function countVowels() {
+            let inputText = document.getElementById('inputText').value;
+            let count = (inputText.match(/[aeiouyåäö]/gi) || []).length;
+            document.getElementById('result').innerText = `${inputText} contains ${count} vowels.`;
+        }
+    </script>
+</body>
+</html>
+
